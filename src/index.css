@@ -1,13 +1,234 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --color-primary: #6741d9;
+  --color-primary-light: #7950f2;
+  --color-text: #d2e0ef;
+  --color-text-dark: #cbd3da;
+  --color-background-100: #343a40;
+  --color-background-500: #2b3035;
+  --color-background-900: #212529;
+  --color-red: #fa5252;
+  --color-red-dark: #e03131;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  color: var(--color-text);
+  background-color: var(--color-background-900);
+  padding: 2.4rem;
+}
+
+.nav-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  height: 7.2rem;
+  padding: 1.1rem 1.6rem;
+  /* padding: 0 3.2rem; */
+  background-color: var(--color-primary);
+  border-radius: 0.9rem;
+}
+
+.main {
+  margin-top: 2.4rem;
+  height: calc(101vh - 7.2rem - 7 * 2.4rem);
+  display: flex;
+  gap: 2.4rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.box {
+  width: 52.7rem;
+  max-width: 52.7rem;
+  background-color: var(--color-background-500);
+  border-radius: 0.9rem;
+  position: relative;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: "Monoton";
+  font-size: 4rem;
+  text-transform: uppercase;
+  align-items: center;
+}
+
+.add-work {
+  /* justify-self: center; */
+
+  width: 40rem;
+  transition: all 0.3s;
+  color: var(--color-text);
+
+  background-color: var(--color-primary-light);
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.add-work::placeholder {
+  color: var(--color-text);
+  font-weight: 400;
+}
+.add-form1 {
+  /* padding: 2.8rem 0; */
+  display: flex;
+
+  /* justify-self: center; */
+  gap: 0.8rem;
+}
+.add-form {
+  justify-self: center;
+
+  color: var(--color-primary-light);
+  width: 10rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+button,
+input,
+select {
+  border: none;
+  padding: 1.1rem 1.6rem;
+  font-size: 1.7rem;
+  border-radius: 0.7rem;
+  justify-self: center;
+}
+.clear-item {
+  /* justify-self: center; */
+
+  width: 15rem;
+  text-transform: uppercase;
+
+  margin-left: 30rem;
+  color: var(--color-red-dark);
+  font-weight: bolder;
+  cursor: pointer;
+}
+.add-form:hover {
+  background-color: var(--color-text-dark);
+  color: var(--color-primary);
+}
+.clear-item:hover {
+  background-color: var(--color-text-dark);
+  color: var(--color-primary);
+}
+
+h3 {
+  position: relative;
+  text-align: center;
+  padding: 1rem;
+  font-size: 2.2rem;
+  font-style: oblique;
+}
+
+.stats {
+  height: 7.2rem;
+  padding: 2rem 0rem;
+  background-color: var(--color-primary-light);
+  text-align: center;
+  border-radius: 0.9rem;
+  font-weight: 700;
+  font-size: 2.4rem;
+}
+
+/* .box .actions {
+  position: absolute;
+} */
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 1.4rem;
+  height: 60rem;
+  /* margin-bottom: 50rem; */
+  margin: 1rem;
+  overflow: scroll;
+  padding: 1rem;
+  background-color: var(--color-background-900);
+  border-radius: 1.2rem;
+}
+
+.list li {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 0.6rem 0.6rem 1rem;
+  transition: 0.5s;
+  background-color: var(--color-background-100);
+  border-radius: 1rem;
+  font-size: medium;
+  overflow: hidden;
+}
+
+.list li > * {
+  margin-right: 1.6rem;
+}
+
+.list li > :last-child {
+  margin-right: 0;
+}
+
+.box select {
+  width: 20rem;
+  text-transform: uppercase;
+  /* margin-bottom: 30rem; */
+  color: var(--color-primary-light);
+  cursor: pointer;
+
+  margin-top: 1.4rem;
+  margin-left: 10rem;
+  margin-right: 2rem;
+  font-size: small;
+}
+.box button {
+  width: 12rem;
+  color: var(--color-primary-light);
+  text-transform: uppercase;
+  margin-top: 1.4rem;
+  font-size: small;
+  cursor: pointer;
+}
+
+.priority {
+  text-transform: uppercase;
+  color: var(--color-primary-light);
+}
+input[type="checkbox"] {
+  height: 2rem;
+  width: 2rem;
+  accent-color: #e5771f;
+  cursor: pointer;
+}
+
+.list li button {
+  font-size: 1.8rem;
+  background: none;
+  padding-bottom: 0.8rem;
+  transform: translateY(-7px);
+  border: none;
+  cursor: pointer;
+  align-self: center;
+}
+
+.list .text {
+  background: none;
+  border-style: none;
+  outline: none;
+  color: var(--color-text);
+  width: 350px;
+  font-family: "Quicksand";
+  font-size: 2.4rem;
 }
